@@ -15,13 +15,13 @@ del usuario')
         stage('Crear Usuario') { 
             steps { 
                 script { 
+                   // git branch: 'main', url: 'https://github.com/josuereydev/Desafio_Uno_LinuxUsers.git'
                     def login = params.LOGIN 
                     def nombreApellido = params.NOMBRE_APELLIDO 
                     def departamento = params.DEPARTAMENTO 
                     def passwordTemporal = generatePassword() 
  
-                    sh "sudo useradd -m -s /bin/bash -g $departamento 
-$login" 
+                    sh "sudo useradd -m -s /bin/bash -g $departamento $login" 
                     sh "echo $login:$passwordTemporal | sudo chpasswd" 
  
                     echo "Usuario creado: $login" 

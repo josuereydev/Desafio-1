@@ -2,10 +2,9 @@ pipeline {
     agent any //Define que este pipeline puede ejecutarse en cualquier agente disponible en jenkins
     
     parameters { //define los parametros que se solicitaran al usuario al iniciar el trabajo en jenkins
-        string(name: 'LOGIN', description: 'Ingresa tu usuario', defaultValue: '') //parametro para el nombre de usuario
-        string(name: 'NOMBRE ', description: 'Ingresa tu Nombre', defaultValue: '') // parametro para el nombre y apellido
-        string(name: 'APELLIDO', description: 'Ingresa tu Apellido', defaultValue: '')
-        choice(name: 'DEPARTAMENTO', choices: ['Contabilidad', 'Finanzas', 'Tecnología'], description: 'Seleccione su Departamento') //parametro para seleccionar departamento
+        string(name: 'LOGIN', description: 'Ingresa el usuario', defaultValue: '') //parametro para el nombre de usuario
+        string(name: 'NOMBRE y APELLIDO', description: 'Ingresa el Nombre y Apellido del Usuario', defaultValue: '') // parametro para el nombre y apellido
+        choice(name: 'DEPARTAMENTO', choices: ['Contabilidad', 'Finanzas', 'Tecnología'], description: 'Seleccione el Departamento del Usuario') //parametro para seleccionar departamento
     }
 
     stages { //define las etapas del pipeline

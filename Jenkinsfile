@@ -2,15 +2,16 @@ pipeline {
     agent any //Define que este pipeline puede ejecutarse en cualquier agente disponible en jenkins
     
     parameters { //define los parametros que se solicitaran al usuario al iniciar el trabajo en jenkins
-        string(name: 'Login', description: 'Por favor ingrese su nombre de usuario', defaultValue: '') //parametro para el nombre de usuario
-        string(name: 'NombreApellido', description: 'Ingrese su Nombre y Apellido', defaultValue: '') // parametro para el nombre y apellido
-        choice(name: 'Departamento', choices: ['Contabilidad', 'Finanzas', 'Tecnología'], description: 'Escoja Departamento al que pertenece') //parametro para seleccionar departamento
+        string(name: 'LOGIN', description: 'Ingresa tu usuario', defaultValue: '') //parametro para el nombre de usuario
+        string(name: 'NOMBRE ', description: 'Ingresa tu Nombre', defaultValue: '') // parametro para el nombre y apellido
+        string(name: 'APELLIDO', description: 'Ingresa tu Apellido', defaultValue: '')
+        choice(name: 'DEPARTAMENTO', choices: ['Contabilidad', 'Finanzas', 'Tecnología'], description: 'Seleccione su Departamento') //parametro para seleccionar departamento
     }
 
     stages { //define las etapas del pipeline
         stage('Crear usuario') { //primera etapa: crear el usuario en el sistema
             steps { //define los pasos dentro de esta etapa
-                sh "sudo useradd -m -s /bin/bash -c '${NombreApellido}' ${Login}" //crea un nuevo usuario en el sistema con los parametros proporcionados
+                sh "sudo useradd -m -s /bin/bash -c '${Nombre y Apellido}' ${Login}" //crea un nuevo usuario en el sistema con los parametros proporcionados
             }
         }
 ///

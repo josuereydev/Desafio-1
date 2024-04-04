@@ -3,7 +3,7 @@ pipeline {
     
     parameters { 
         string(name: 'LOGIN', description: 'Ingresar el UserID', defaultValue: '') 
-        string(name: 'NOBRE y APELLIDO', description: 'Ingresar Nombre y Apellido del Usuario', defaultValue: '') 
+        string(name: 'NombreApellido', description: 'Ingresar Nombre y Apellido del Usuario', defaultValue: '') 
         choice(name: 'DEPARTAMENTO', choices: ['Contabilidad', 'Finanzas', 'Tecnología'], description: 'A que depto pertenece el Usuario:') 
 
     stages { 
